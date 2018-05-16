@@ -1,6 +1,35 @@
 # Semantic Segmentation
 ### Introduction
-In this project, you'll label the pixels of a road in images using a Fully Convolutional Network (FCN).
+In this project, our task is to label the pixels of a road in images using a Fully Convolutional Network (FCN) implemented based on the VGG-16 image classifier architecture.
+
+### Reflection
+
+A pre-trained VGG-16 network was converted to a fully convolutional network by converting the final fully connected layer to a 1x1 convolution and setting the depth equal to the number of desired classes (in this case, two: road and not-road). Performance is improved through the use of skip connections, performing 1x1 convolutions on previous VGG layers (in this case, layers 3 and 4) and adding them element-wise to upsampled (through transposed convolution) lower-level layers (i.e. the 1x1-convolved layer 7 is upsampled before being added to the 1x1-convolved layer 4). Each convolution and transpose convolution layer includes a kernel initializer and regularizer and padding is kept as 'same'. This architecture is implemented in layers() in main.py from lines 52-79.The loss function for the network is cross-entropy loss (tf.nn.softmax_cross_entropy_with_logits), and an Adam optimizer is used(Lines 87-111)
+
+Training : 
+As, my gpu instance was not able to train the model with batch size of more than 2 ,I kept batch size as 2 and epochs 25.
+
+I used below hyperparameters
+- keep_prob: 0.4
+- learning_rate: 0.0001
+- epochs: 25
+- batch_size: 2
+
+I got a loss of 0.1 after 5 epochs . So I tried increasing epochs to 10 and 25 got better results as loss of 0.03.
+
+### Results :
+Here are few of my output images:
+
+
+
+
+
+
+
+
+
+
+
 
 ### Setup
 ##### GPU
