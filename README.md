@@ -20,6 +20,21 @@ I got a loss of 0.1 after 5 epochs . So I tried increasing epochs to 10 and 25 g
 ### Results :
 Here are few of my output images:
 
+![op1](/output_img/um_000014.png)
+
+
+![op2](/output_img/um_000089.png)
+
+
+![op3](/output_img/umm_000034.png)
+
+
+![op4](/output_img/umm_000037.png)
+
+
+![op5](/output_img/uu_000081.png)
+
+
 
 
 
